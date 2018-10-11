@@ -10,8 +10,10 @@ class App extends React.Component {
   state = { lists: [] };
 
   componentDidMount() {
+    debugger
     axios.get('/api/lists')
       .then( ({data: lists}) => this.setState({lists}) )
+    
   }
 
   
@@ -19,7 +21,7 @@ class App extends React.Component {
   render() { 
     return (
       <Container>
-        
+        <h1>hello</h1>
       </Container>
     
     )

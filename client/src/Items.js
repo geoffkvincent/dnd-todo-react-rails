@@ -12,12 +12,14 @@ const Container = styled.div`
 
 
 
-export default class Task extends React.Component {
+class Items extends React.Component {
   render() {
     return (     
       <Container>
-        {this.props.task.content}
+        {this.props.item.name}
       </Container>   
     );
   }
 }
+
+export default Items

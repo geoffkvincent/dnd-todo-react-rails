@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Task from './Task'
+import Items from './Items'
+import axios from 'axios'
 
 const Container = styled.div`
   margin: 8px;
@@ -26,22 +27,29 @@ const TaskList = styled.div`
   min-height: 100px;
 `;
 
-export default class Column extends React.Component {
-  
+class Lists extends React.Component {
+  state = {items: []}
+
+  componentDidMount() {
+    const id = this.props.listId
+    axios.get(`/api/lists/${id}/items`)
+      .then (  res => this.setState({ items: res.data }) )
+  }
+
   render() {
-    const {tasks} = this.props
+    
     return (
       
       <Container >
         <Title >
-          {this.props.column.title}
+          
         </Title>    
             <TaskList>
-              {tasks.map((task, index) => (
-                <Task key={task.id} task={task} index={index} />
-              ))}
+              
             </TaskList>       
       </Container>    
     )
   }
 }
+
+export default Lists

@@ -18,9 +18,13 @@ class App extends React.Component {
   
 
   render() { 
+    const {lists} = this.state
     return (
       <Container>
-        <Lists ></Lists>
+        {lists.map(list =>
+            <Lists key={list.id} list_name={list.name} ></Lists>
+          )
+        }
       </Container>
     
     )

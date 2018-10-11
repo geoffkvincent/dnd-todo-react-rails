@@ -37,16 +37,19 @@ class Lists extends React.Component {
   }
 
   render() {
-    
+    const {items} = this.state
+    const {list_name} = this.props
     return (
       
       <Container >
         <Title >
-          
+          {list_name}
         </Title>    
-            <TaskList>
-              
-            </TaskList>       
+          <TaskList>
+          {items.map(item => (
+                  <Items key={item.id} item={item} />
+                ))}
+          </TaskList>       
       </Container>    
     )
   }

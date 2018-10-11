@@ -20,13 +20,7 @@ class App extends React.Component {
   render() { 
     return (
       <Container>
-        {this.state.columnOrder.map((columnId, index) => {
-          const column = this.state.columns[columnId];
-          const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
-
-          
-          
-        })}
+        
       </Container>
     
     )

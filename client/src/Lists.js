@@ -28,7 +28,7 @@ const TaskList = styled.div`
 `;
 
 class Lists extends React.Component {
-  state = {items: []}
+  state = {items: [], id: ''}
 
   componentDidMount() {
     const id = this.props.listId
@@ -47,7 +47,7 @@ class Lists extends React.Component {
         </Title>    
           <TaskList>
           {items.map(item => (
-                  <Items key={item.id} item={item} />
+                  <Items key={item.id} item={item}  />
                 ))}
           </TaskList>       
       </Container>    

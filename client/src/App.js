@@ -22,7 +22,7 @@ class App extends React.Component {
     return (
       <Container>
         {lists.map(list =>
-            <Lists key={list.id} list_name={list.name} ></Lists>
+            <Lists key={list.id} list_name={list.name} listId={list.id} ></Lists>
           )
         }
       </Container>

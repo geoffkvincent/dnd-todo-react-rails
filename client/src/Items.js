@@ -8,15 +8,22 @@ const Container = styled.div`
   border-radius: 2px;
   padding: 8px;
   margin-bottom: 8px;
-  background-color: 
+  background-color: white;
 `;
 
 
 
 class Items extends React.Component {
+
+  setId = () => {
+    debugger
+  this.props.getItemId(this.props.item.id)
+  }
+
   render() {
+    
     return (  
-      <Draggable draggableId={this.props.item.id} index={this.props.index}> 
+      <Draggable disableInteractiveElementBlocking={true} onClick={this.setId} draggableId={this.props.item.id} index={this.props.index}> 
         {provided => (
           <Container
             {...provided.draggableProps}

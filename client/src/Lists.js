@@ -40,6 +40,7 @@ class Lists extends React.Component {
   render() {
     const {items} = this.state
     const {list_name, listId} = this.props
+    
     return (
       
       <Container >
@@ -53,7 +54,7 @@ class Lists extends React.Component {
               {...provided.droppableProps}
             >            
               {items.map((item, index) => (
-                <Items key={item.id} item={item} index={index} />
+                <Items key={item.id} item={item} index={index} getItemId={this.props.getItemId} />
               ))}
               {provided.placeholder}
             </TaskList>   

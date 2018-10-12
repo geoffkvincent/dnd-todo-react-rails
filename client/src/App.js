@@ -17,7 +17,7 @@ class App extends React.Component {
   }
   
   getItemId = (id) => {
-    debugger
+    
   this.setState({item_id: id})
   }
   

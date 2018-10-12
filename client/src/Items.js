@@ -19,7 +19,7 @@ class Items extends React.Component {
     debugger
   this.props.getItemId(this.props.item.id)
   }
-
+ 
   render() {
     
     return (  

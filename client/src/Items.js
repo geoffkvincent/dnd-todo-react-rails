@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Draggable} from 'react-beautiful-dnd'
 
 
 const Container = styled.div`
@@ -14,10 +15,18 @@ const Container = styled.div`
 
 class Items extends React.Component {
   render() {
-    return (     
-      <Container>
-        {this.props.item.name}
-      </Container>   
+    return (  
+      <Draggable draggableId={this.props.item.id} index={this.props.index}> 
+        {provided => (
+          <Container
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            innerRef={provided.innerRef}
+          >
+            {this.props.item.name}
+          </Container>  
+        )}
+      </Draggable>   
     );
   }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Items from './Items'
 import axios from 'axios'
+import {Droppable} from 'react-beautiful-dnd'
 
 const Container = styled.div`
   margin: 8px;
@@ -28,7 +29,7 @@ const TaskList = styled.div`
 `;
 
 class Lists extends React.Component {
-  state = {items: [], id: ''}
+  state = {items: []}
 
   componentDidMount() {
     const id = this.props.listId
@@ -38,18 +39,26 @@ class Lists extends React.Component {
 
   render() {
     const {items} = this.state
-    const {list_name} = this.props
+    const {list_name, listId} = this.props
     return (
       
       <Container >
         <Title >
           {list_name}
-        </Title>    
-          <TaskList>
-          {items.map(item => (
-                  <Items key={item.id} item={item}  />
-                ))}
-          </TaskList>       
+        </Title> 
+        <Droppable droppableId={listId}>
+          {provided => (
+            <TaskList
+              innerRef={provided.innerRef}
+              {...provided.droppableProps}
+            >            
+              {items.map((item, index) => (
+                <Items key={item.id} item={item} index={index} />
+              ))}
+              {provided.placeholder}
+            </TaskList>   
+          )}  
+        </Droppable>     
       </Container>    
     )
   }

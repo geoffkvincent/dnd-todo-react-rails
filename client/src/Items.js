@@ -11,8 +11,6 @@ const Container = styled.div`
   background-color: white;
 `;
 
-
-
 class Items extends React.Component {
 
   setId = () => {

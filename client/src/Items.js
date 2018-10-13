@@ -24,7 +24,7 @@ class Items extends React.Component {
     
     return (  
       <Draggable onClick={this.setId} draggableId={this.props.item.id} index={this.props.index}> 
-        {provided => (
+        {provided => ( 
           <Container
             {...provided.draggableProps}
             {...provided.dragHandleProps}

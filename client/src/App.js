@@ -36,7 +36,7 @@ class App extends React.Component {
       return
     }
     
-    const itemId = this.state.item_id
+    const itemId = this.state.item_id 
     const list = this.state.lists[source.droppableId]
     const newItemIds = Array.from(list.itemId)
     newItemIds.splice(source.index, 1)

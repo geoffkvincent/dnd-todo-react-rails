@@ -20,7 +20,6 @@ class App extends React.Component {
     
   this.setState({item_id: id})
   }
-  
 
   onDragEnd = result => {
     const{ destination, source, draggableId } = result;

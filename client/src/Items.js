@@ -23,7 +23,7 @@ class Items extends React.Component {
   render() {
     
     return (  
-      <Draggable disableInteractiveElementBlocking={true} onClick={this.setId} draggableId={this.props.item.id} index={this.props.index}> 
+      <Draggable onClick={this.setId} draggableId={this.props.item.id} index={this.props.index}> 
         {provided => (
           <Container
             {...provided.draggableProps}

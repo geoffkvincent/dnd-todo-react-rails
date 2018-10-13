@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import {DragDropContext} from 'react-beautiful-dnd'
 import axios from 'axios'
 import Lists from './Lists'
+import Items from './Items'
 
 const Container = styled.div`
   display: flex;

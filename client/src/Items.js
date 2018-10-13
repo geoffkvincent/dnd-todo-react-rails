@@ -16,7 +16,7 @@ const Container = styled.div`
 class Items extends React.Component {
 
   setId = () => {
-    debugger
+    
   this.props.getItemId(this.props.item.id)
   }
  
